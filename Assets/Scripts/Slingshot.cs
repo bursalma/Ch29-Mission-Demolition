@@ -4,23 +4,22 @@ using UnityEngine;
 
 public class Slingshot : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public GameObject launchpoint;
+
+    private void Awake()
+    {
+        Transform launchPointTrans = transform.Find("LaunchPoint");
+        launchpoint = launchPointTrans.gameObject;
+        launchpoint.SetActive(false);
+    }
 
     void OnMouseEnter()
     {
-        print("Slingshot:OnMouseEnter()");
+        launchpoint.SetActive(true);
     }
 
     void OnMouseExit()
     {
-        print("Slingshot:OnMouseExit()");
+        launchpoint.SetActive(false);
     }
 }

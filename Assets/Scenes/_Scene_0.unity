@@ -213,6 +213,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1295870802}
+  - component: {fileID: 1295870803}
   m_Layer: 0
   m_Name: LaunchPoint
   m_TagString: Untagged
@@ -233,6 +234,17 @@ Transform:
   m_Father: {fileID: 1350207234}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: -15, z: 0}
+--- !u!122 &1295870803
+Halo:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1295870801}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4290756543
+  m_Size: 1
 --- !u!1 &1314701590
 GameObject:
   m_ObjectHideFlags: 0
@@ -424,6 +436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaef5613813695f43aeed1c21341d14b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  launchpoint: {fileID: 0}
 --- !u!1 &1379229823
 GameObject:
   m_ObjectHideFlags: 0
