@@ -1,6 +1,6 @@
-﻿using System.Collections;
+﻿using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
 public enum GameMode
 {
@@ -9,7 +9,8 @@ public enum GameMode
     levelEnd
 }
 
-public class MissionDemolition : MonoBehaviour {
+public class MissionDemolition : MonoBehaviour
+{
 
     static public MissionDemolition S;
 
@@ -29,7 +30,7 @@ public class MissionDemolition : MonoBehaviour {
     {
         S = this;
         level = 0;
-        levelMax = castle.Length;
+        levelMax = castles.Length;
         StartLevel();
     }
 
@@ -42,7 +43,7 @@ public class MissionDemolition : MonoBehaviour {
 
         GameObject[] gos = GameObject.FindGameObjectsWithTag("Projectile");
 
-        foreach(GameObject pTemp in gos)
+        foreach (GameObject pTemp in gos)
         {
             Destroy(pTemp);
         }
@@ -50,7 +51,7 @@ public class MissionDemolition : MonoBehaviour {
         castle = Instantiate(castles[level]) as GameObject;
         castle.transform.position = castlePos;
         shotsTaken = 0;
-        SwithcView("Both");
+        SwitchView("Both");
         ProjectileLine.S.Clear();
         Goal.goalMet = false;
         ShowGT();
@@ -93,7 +94,7 @@ public class MissionDemolition : MonoBehaviour {
         switch (showing)
         {
             case "Slingshot":
-                if(GUI.Button(buttonRect,"Show Castle"))
+                if (GUI.Button(buttonRect, "Show Castle"))
                 {
                     SwitchView("Castle");
                 }
@@ -105,7 +106,7 @@ public class MissionDemolition : MonoBehaviour {
                 }
                 break;
             case "Both":
-                if (GUI.Button(buttonRect,"Show Slingshot"))
+                if (GUI.Button(buttonRect, "Show Slingshot"))
                 {
                     SwitchView("Slingshot");
                 }
