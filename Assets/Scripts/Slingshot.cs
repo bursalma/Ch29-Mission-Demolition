@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Slingshot : MonoBehaviour {
 
+    static public Slingshot S;
     public GameObject prefapProjectile;
     public float velocityMult = 4f;
     public bool ___________________;
@@ -13,8 +14,9 @@ public class Slingshot : MonoBehaviour {
     public bool aimingMode;
 
 
-    private void Awake()
+    void Awake()
     {
+        S = this;
         Transform launchPointTrans = transform.Find("LaunchPoint");
         launchpoint = launchPointTrans.gameObject;
         launchpoint.SetActive(false);
@@ -39,7 +41,7 @@ public class Slingshot : MonoBehaviour {
         projectile.GetComponent<Rigidbody>().isKinematic = true;
     }
 
-    private void Update()
+    void Update()
     {
         if (!aimingMode) return;
         Vector3 mousePos2D = Input.mousePosition;
